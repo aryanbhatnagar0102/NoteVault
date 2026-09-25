@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #f5f0e6;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    color: #29251f;
+}
+#app {
+    min-height: 100vh;
+}
+
+/* Main Page */
+
+.home-page {
+    min-height: 100vh;
+    padding: 70px 8%;
+    position: relative;
+}
+
+/* Header */
+
+.hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 65px;
+}
+
+.small-title {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #777064;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+}
+
+.tagline {
+    font-size: 19px;
+    color: #625c52;
+    line-height: 1.6;
+}
+
+/* Subject Cards */
+
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.subject-card {
+    min-height: 230px;
+    padding: 30px 25px;
+
+    border-radius: 18px;
+    border: 2px solid #29251f;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 7px 7px 0 #29251f;
+}
+
+.subject-icon {
+    font-size: 45px;
+    margin-bottom: 18px;
+}
+
+.subject-card h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subject-card p {
+    color: #5f594f;
+}
+
+/* Card Colors */
+
+.physics {
+    background: #dcecff;
+}
+
+.chemistry {
+    background: #ffe2e2;
+}
+
+.mathematics {
+    background: #e4f3d7;
+}
+
+.biology {
+    background: #f7e1ff;
+}
+
+/* Footer */
+
+.footer-text {
+    text-align: center;
+    margin-top: 55px;
+    color: #777064;
+    font-size: 15px;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .subjects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .home-page {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Subject Page */
+
+.subject-page {
+    min-height: 100vh;
+    padding: 45px 9%;
+
+    position: relative;
+
+    background-color: #fffdf5;
+
+    background-image:
+        linear-gradient(
+            rgba(100, 150, 190, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 100% 32px;
+
+    border-left: 3px solid #d96b6b;
+}
+
+.back-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #625c52;
+    margin-bottom: 40px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.subject-header {
+    margin-bottom: 45px;
+}
+
+.subject-header p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #777064;
+    margin-bottom: 10px;
+}
+
+.subject-header h1 {
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 58px;
+    margin-bottom: 8px;
+
+    display: inline-block;
+
+    transform: rotate(-1deg);
+
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+.subject-header span {
+    color: #625c52;
+}
+
+
+.chapter-list {
+    max-width: 900px;
+}
+
+.chapter {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 18px 25px;
+    margin-bottom: 14px;
+
+    background: rgba(255, 253, 245, 0.85);
+
+    border: 2px solid #29251f;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.chapter:hover {
+    transform: translateX(8px) rotate(-0.5deg);
+    box-shadow: 4px 4px 0 #29251f;
+}
+
+.chapter span {
+    font-family: Georgia, serif;
+    color: #918979;
+}
+
+.chapter h3 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+}
+
+.chapter {
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.chapter-options {
+    width: 100%;
+
+    display: flex;
+    gap: 15px;
+
+    padding-top: 15px;
+    margin-top: 5px;
+
+    border-top: 1px dashed #777064;
+}
+
+.chapter-options button {
+    padding: 10px 16px;
+
+    border: 2px solid #29251f;
+    border-radius: 8px;
+
+    background: #fff4a8;
+
+    cursor: pointer;
+
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+
+    transition: transform 0.2s ease;
+}
+
+.chapter-options button:hover {
+    transform: rotate(-2deg) translateY(-2px);
+}
