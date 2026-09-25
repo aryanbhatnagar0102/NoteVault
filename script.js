@@ -177,14 +177,120 @@ function toggleChapter(chapter) {
     chapter.insertAdjacentHTML("beforeend", `
         <div class="chapter-options">
 
-          <button>
+          <button onclick="openNotes()">
             📄 Handwritten Notes
           </button>
 
-           <button>
+           <button onclick="openVideo()">
                 🎥 Video Lecture
            </button>
 
         </div>
         `);
+}
+
+function openNotes() {
+    document.getElementById("app").innerHTML = `
+        <div class="notes-page">
+
+            <button class="back-btn" onclick="showPhysics()">
+                ← Back to Physics
+            </button>
+
+            <h1>Current Electricity</h1>
+
+            <div class="pdf-container">
+                <iframe
+                    src="resources/physics/Current_Electricity_Notes.pdf"
+                    width="100%"
+                    height="700px">
+                </iframe>
+            </div>
+
+        </div>
+    `;
+}
+
+function openVideo() {
+    document.getElementById("app").innerHTML = `
+
+        <div class="study-page">
+
+            <aside class="study-sidebar" id="studySidebar">
+
+                <h2>⚡ Physics</h2>
+
+                <div class="sidebar-chapter active">
+                    <span>03</span>
+                    <p>Current Electricity</p>
+                </div>
+
+                <div class="sidebar-chapter">
+                    <span>01</span>
+                    <p>Electric Charges and Fields</p>
+                </div>
+
+                <div class="sidebar-chapter">
+                    <span>02</span>
+                    <p>Electrostatic Potential</p>
+                </div>
+
+                <div class="sidebar-chapter">
+                    <span>04</span>
+                    <p>Moving Charges and Magnetism</p>
+                </div>
+
+            </aside>
+
+            <button class="menu-btn" onclick="toggleSidebar()">
+                ☰
+            </button>
+
+            <div style="
+                flex: 1;
+                min-width: 0;
+                padding: 50px;
+                background: #fffdf5;
+            ">
+
+                <h1 style="
+                    font-family: 'Segoe Print', 'Comic Sans MS', cursive;
+                    font-size: 42px;
+                    margin-bottom: 30px;
+                ">
+                    Current Electricity
+                </h1>
+
+                <div style="
+                    width: 100%;
+                    height: 550px;
+                    background: black;
+                    border: 2px solid #29251f;
+                    border-radius: 10px;
+                    overflow: hidden;
+                ">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/AnZ7YAAzZmM"
+                        title="Current Electricity Lecture"
+                        style="
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                        "
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("studySidebar");
+
+    sidebar.classLis.toggle("collapsed");
 }
