@@ -53,103 +53,148 @@ physicsCard.addEventListener("click", () => {
     showPhysics();
 })
 
+const physicsChapters = [
+    {
+        number: "01",
+        name: "Electric Charges and Fields",
+        pdf: "resources/physics/Electric_Charges_and_Fields_Notes.pdf",
+        video: "https://www.youtube.com/embed/i_yT6CpUOTk?si=gvsNCd6Ga2VxOFQ0"
+    },
+
+    {
+        number: "02",
+        name: "Electrostatic Potential and Capacitance",
+        pdf: "resources/physics/Electrostatic_Potential_and_Capacitance_Notes.pdf",
+        video: "https://www.youtube.com/embed/5Wj95zTraZI?si=mtqKB1bJF1DCktt0"
+    },
+
+    {
+        number: "03",
+        name: "Current Electricity",
+        pdf: "resources/physics/Current_Electricity_Notes.pdf",
+        video: "https://www.youtube.com/embed/ANz7YYAZzrM?si=KTm4zeD6tXUzBylh"
+    },
+
+    {
+        number: "04",
+        name: "Moving Charges and Magnetism",
+        pdf: "resources/physics/Moving_Charges_and_Magnetism_Notes.pdf",
+        video: "https://www.youtube.com/embed/LSJIX_tSdPY?si=6q-FxrrVrlZKNfQr"
+    },
+
+    {
+        number: "05",
+        name: "Magnetism and Matter",
+        pdf: "resources/physics/Magnetism_and_Matter_Notes.pdf",
+        video: "https://www.youtube.com/embed/JfJRMqx_YHE?si=QQOWDAa3uZAicVSJ"
+    },
+
+    {
+        number: "06",
+        name: "Electromagnetic Induction",
+        pdf: "resources/physics/Electromagnetic_Induction_Notes.pdf",
+        video: "https://www.youtube.com/embed/-ik_b6qN5b4?si=QshRibeIhqLBR97E"
+    },
+
+    {
+        number: "07",
+        name: "Alternating Current",
+        pdf: "resources/physics/Alternating_Current_Notes.pdf",
+        video: "https://www.youtube.com/embed/jZeRVBO0ymI?si=de99--qSNLj9pYnj"
+    },
+
+    {
+        number: "08",
+        name: "Electromagnetic Waves",
+        pdf: "resources/physics/Electromagnetic_Waves_notes.pdf",
+        video: "https://www.youtube.com/embed/alFEgW-gE9M?si=M70M-H--4O_-0e2c"
+    },
+
+    {
+        number: "09",
+        name: "Ray Optics and Optical Instruments",
+        pdf: "resources/physics/Ray_Optics_and_Optical_Instruments_Notes.pdf",
+        video: "https://www.youtube.com/embed/ovfNP_TqolM?si=4ZYDhDAXKymnM9Dc"
+    },
+
+    {
+        number: "10",
+        name: "Wave Optics",
+        pdf: "resources/physics/Wave_optics_Notes.pdf",
+        video: "https://www.youtube.com/embed/2gumHdFXums?si=R6KCR9iNSOFS0jKR"
+    },
+
+    {
+        number: "11",
+        name: "Dual Nature of Radiation and Matter",
+        pdf: "resources/physics/Dual_Nature_of_Radiation_and_Matter_Notes.pdf",
+        video: "https://www.youtube.com/embed/6GaLVcWIVzw?si=gKwFKNJwefL1VKBq"
+    },
+
+    {
+        number: "12",
+        name: "Atoms",
+        pdf: "resources/physics/Atoms_Notes.pdf",
+        video: "https://www.youtube.com/embed/uf2UvFqUoXE?si=67A3QVMnE2JBk3sZ"
+    },
+
+    {
+        number: "13",
+        name: "Nuclei",
+        pdf: "resources/physics/Nuclei_Notes.pdf",
+        video: "https://www.youtube.com/embed/kHz5ZoBeSVs?si=i7TB4hya9Ya9ajvn"
+    },
+
+    {
+        number: "14",
+        name: "Semiconductor Electronics",
+        pdf: "resources/physics/Semiconductor_Electronics_Notes.pdf",
+        video: "https://www.youtube.com/embed/03PgdzPn-XE?si=GT30y2wqFPgDO98X"
+    }
+];
+
 function showPhysics() {
+
     document.getElementById("app").innerHTML = `
-       <div class="subject-page">
+        <div class="subject-page">
 
-         <button class = "back-btn" onclick="goHome()">
-            ← Back
-        </button>
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
 
-        <header class="subject-header">
-           <p>CLASS 12 • PHYSICS</p>
-           <h1>Physics</h1>
-           <span>Choose a chapter to start studying</span>
-        </header>
+            <header class="subject-header">
+                <p>CLASS 12 • PHYSICS</p>
+                <h1>Physics</h1>
+                <span>Choose a chapter to start studying</span>
+            </header>
 
-        <div class="chapter-list">
+            <div class="chapter-list">
 
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>01</span>
-              <h3>Electric Charges and Fields</h3>
-           </div>
+                ${physicsChapters.map(chapter => `
+                    <div class="chapter"
+                         onclick="toggleChapter(this, '${chapter.number}')">
 
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>02</span>
-              <h3>Electrostatic Potential and Capacitance</h3>
-           </div>
+                        <span>${chapter.number}</span>
+                        <h3>${chapter.name}</h3>
 
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>03</span>
-              <h3>Current Electricity</h3>
-           </div>
+                    </div>
+                `).join("")}
 
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>04</span>
-              <h3>Moving Charges and Magnetism</h3>
-           </div>
+            </div>
 
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>05</span>
-              <h3>Magnetism and Matter</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>06</span>
-              <h3>Electromagnetic Induction</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>07</span>
-              <h3>Alternating Current</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>08</span>
-              <h3>Electromagnetic Waves</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>09</span>
-              <h3>Ray Optics and Optical Instruments</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>10</span>
-              <h3>Wave optics</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>11</span>
-              <h3>Dual Nature of Radiation and Matter</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>12</span>
-              <h3>Atoms</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>13</span>
-              <h3>Nuclei</h3>
-           </div>
-
-           <div class = "chapter" onclick="toggleChapter(this)">
-              <span>14</span>
-              <h3>Semiconductor Electronics</h3>
-           </div>
-
-    `
+        </div>
+    `;
 }
 
 function goHome() {
     location.reload();
 }
 
-function toggleChapter(chapter) {
+function toggleChapter(chapterElement, chapterNumber) {
 
     document.querySelectorAll(".chapter").forEach(item => {
-        if(item !== chapter) {
+
+        if (item !== chapterElement) {
             item.classList.remove("open");
 
             const options = item.querySelector(".chapter-options");
@@ -158,60 +203,45 @@ function toggleChapter(chapter) {
                 options.remove();
             }
         }
+
     });
 
-    if (chapter.classList.contains("open")) {
-        chapter.classList.remove("open");
+    if (chapterElement.classList.contains("open")) {
 
-        const options = chapter.querySelector(".chapter-options");
+        chapterElement.classList.remove("open");
 
-        if(options) {
+        const options = chapterElement.querySelector(".chapter-options");
+
+        if (options) {
             options.remove();
         }
 
         return;
     }
 
-    chapter.classList.add("open");
+    chapterElement.classList.add("open");
 
-    chapter.insertAdjacentHTML("beforeend", `
+    chapterElement.insertAdjacentHTML("beforeend", `
         <div class="chapter-options">
 
-          <button onclick="openNotes()">
-            📄 Handwritten Notes
-          </button>
-
-           <button onclick="openVideo()">
-                🎥 Video Lecture
-           </button>
-
-        </div>
-        `);
-}
-
-function openNotes() {
-    document.getElementById("app").innerHTML = `
-        <div class="notes-page">
-
-            <button class="back-btn" onclick="showPhysics()">
-                ← Back to Physics
+            <button onclick="openNotes('${chapterNumber}')">
+                📄 Handwritten Notes
             </button>
 
-            <h1>Current Electricity</h1>
-
-            <div class="pdf-container">
-                <iframe
-                    src="resources/physics/Current_Electricity_Notes.pdf"
-                    width="100%"
-                    height="700px">
-                </iframe>
-            </div>
+            <button onclick="openVideo('${chapterNumber}')">
+                🎥 Video Lecture
+            </button>
 
         </div>
-    `;
+    `);
 }
 
-function openVideo() {
+function openNotes(chapterNumber) {
+
+    const chapter = physicsChapters.find(
+        item => item.number === chapterNumber
+    );
+
     document.getElementById("app").innerHTML = `
 
         <div class="study-page">
@@ -220,24 +250,43 @@ function openVideo() {
 
                 <h2>⚡ Physics</h2>
 
-                <div class="sidebar-chapter active">
-                    <span>03</span>
-                    <p>Current Electricity</p>
-                </div>
+                <div class="sidebar-chapters">
 
-                <div class="sidebar-chapter">
-                    <span>01</span>
-                    <p>Electric Charges and Fields</p>
-                </div>
+                    ${physicsChapters.map(item => `
 
-                <div class="sidebar-chapter">
-                    <span>02</span>
-                    <p>Electrostatic Potential</p>
-                </div>
+                        <details
+                            class="sidebar-chapter ${item.number === chapterNumber ? "active" : ""}"
+                            onclick="closeOtherDropdowns(this)"
+                        >
 
-                <div class="sidebar-chapter">
-                    <span>04</span>
-                    <p>Moving Charges and Magnetism</p>
+                            <summary>
+
+                                <span>${item.number}</span>
+
+                                <p>${item.name}</p>
+
+                            </summary>
+
+                            <div class="sidebar-options">
+
+                                <button
+                                    onclick="event.stopPropagation(); openNotes('${item.number}')"
+                                >
+                                    📄 Notes
+                                </button>
+
+                                <button
+                                    onclick="event.stopPropagation(); openVideo('${item.number}')"
+                                >
+                                    🎥 Video
+                                </button>
+
+                            </div>
+
+                        </details>
+
+                    `).join("")}
+
                 </div>
 
             </aside>
@@ -258,8 +307,102 @@ function openVideo() {
                     font-size: 42px;
                     margin-bottom: 30px;
                 ">
-                    Current Electricity
+                    ${chapter.name}
                 </h1>
+
+                <div class="pdf-container">
+
+                    <iframe
+                        src="${chapter.pdf}"
+                        width="100%"
+                        height="700px">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
+
+function openVideo(chapterNumber) {
+
+    const chapter = physicsChapters.find(
+        item => item.number === chapterNumber
+    );
+
+    document.getElementById("app").innerHTML = `
+
+        <div class="study-page">
+
+            <aside class="study-sidebar" id="studySidebar">
+
+                <h2>⚡ Physics</h2>
+
+                <div class="sidebar-chapters">
+
+                    ${physicsChapters.map(item => `
+
+                        <details
+                           class="sidebar-chapter
+                           ${item.number === chapterNumber ? "active" : ""}"
+                           onclick="closeOtherDropdowns(this)"
+                        >
+
+                            <summary>
+
+                                <span>${item.number}</span>
+
+                                <p>${item.name}</p>
+
+                            </summary>
+
+                            <div class="sidebar-options">
+
+                                <button
+                                    onclick="openNotes('${item.number}')"
+                                >
+                                    📄 Notes
+                                </button>
+
+                                <button
+                                    onclick="openVideo('${item.number}')"
+                                >
+                                    🎥 Video
+                                </button>
+
+                            </div>
+
+                        </details>
+
+                    `).join("")}
+
+                </div>
+
+            </aside>
+
+
+            <button class="menu-btn" onclick="toggleSidebar()">
+                ☰
+            </button>
+
+
+            <div style="
+                flex: 1;
+                min-width: 0;
+                padding: 50px;
+                background: #fffdf5;
+            ">
+
+                <h1 style="
+                    font-family: 'Segoe Print', 'Comic Sans MS', cursive;
+                    font-size: 42px;
+                    margin-bottom: 30px;
+                ">
+                    ${chapter.name}
+                </h1>
+
 
                 <div style="
                     width: 100%;
@@ -271,8 +414,8 @@ function openVideo() {
                 ">
 
                     <iframe
-                        src="https://www.youtube.com/embed/AnZ7YAAzZmM"
-                        title="Current Electricity Lecture"
+                        src="${chapter.video}"
+                        title="${chapter.name} Lecture"
                         style="
                             width: 100%;
                             height: 100%;
@@ -292,5 +435,26 @@ function openVideo() {
 function toggleSidebar() {
     const sidebar = document.getElementById("studySidebar");
 
-    sidebar.classLis.toggle("collapsed");
+    sidebar.classList.toggle("collapsed");
+}
+
+function toggleSidebarChapter(chapter) {
+
+    document.querySelectorAll(".sidebar-chapter").forEach(item => {
+
+        if (item !== chapter) {
+            item.classList.remove("open");
+        }
+
+    });
+
+    chapter.classList.toggle("open");
+}
+
+function closeOtherDropdowns(current) {
+    document.querySelectorAll(".sidebar-chapter").forEach(item => {
+        if (item !== current) {
+            item.removeAttribute("open");
+        }
+    });
 }

@@ -10,11 +10,11 @@ body {
     font-family: "Segoe Print", "Comic Sans MS", cursive;
     color: #29251f;
 }
+
 #app {
     min-height: 100vh;
 }
 
-/* Main Page */
 
 .home-page {
     min-height: 100vh;
@@ -22,7 +22,7 @@ body {
     position: relative;
 }
 
-/* Header */
+
 
 .hero {
     text-align: center;
@@ -49,7 +49,6 @@ body {
     line-height: 1.6;
 }
 
-/* Subject Cards */
 
 .subjects {
     display: grid;
@@ -75,8 +74,9 @@ body {
 
     cursor: pointer;
 
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .subject-card:hover {
@@ -99,7 +99,7 @@ body {
     color: #5f594f;
 }
 
-/* Card Colors */
+
 
 .physics {
     background: #dcecff;
@@ -117,7 +117,6 @@ body {
     background: #f7e1ff;
 }
 
-/* Footer */
 
 .footer-text {
     text-align: center;
@@ -126,7 +125,7 @@ body {
     font-size: 15px;
 }
 
-/* Mobile */
+
 
 @media (max-width: 900px) {
 
@@ -156,7 +155,6 @@ body {
 
 }
 
-/* Subject Page */
 
 .subject-page {
     min-height: 100vh;
@@ -180,9 +178,13 @@ body {
 .back-btn {
     border: none;
     background: none;
+
     font-size: 16px;
+
     cursor: pointer;
+
     color: #625c52;
+
     margin-bottom: 40px;
 }
 
@@ -214,9 +216,11 @@ body {
     text-decoration-thickness: 3px;
     text-underline-offset: 8px;
 }
+
 .subject-header span {
     color: #625c52;
 }
+
 
 
 .chapter-list {
@@ -238,8 +242,12 @@ body {
 
     cursor: pointer;
 
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    position: relative;
+    flex-wrap: wrap;
 }
 
 .chapter:hover {
@@ -257,21 +265,17 @@ body {
     font-weight: 500;
     font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
-
-.chapter {
-    position: relative;
-    flex-wrap: wrap;
-}
-
 .chapter-options {
     width: 100%;
+
     display: flex;
     gap: 18px;
+
     padding-top: 18px;
     margin-top: 8px;
+
     border-top: 2px dashed #8b8478;
 }
-
 
 .chapter-options button {
     flex: 1;
@@ -328,61 +332,65 @@ body {
 
     border: none;
 }
+
+
 .study-page {
     min-height: 100vh;
-    display: flexbox;
+
+    display: flex;
 
     background: #fffdf5;
 }
 
 .study-sidebar {
-    width: 280px;
-    min-width: 280px;
-
+    width: 300px;
+    min-width: 300px;
     min-height: 100vh;
     padding: 35px 20px;
-
     background: #f5f0e6;
-
     border-right: 2px solid #29251f;
-
-    transition: all 0.4s ease;
-
-    overflow: hidden;
+    transition: width 0.4s ease, min-width 0.4s ease, padding 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
+
+
 
 .study-sidebar.collapsed {
     width: 0;
     min-width: 0;
+
     padding-left: 0;
     padding-right: 0;
 
     border-right: none;
 }
 
-.sidebar-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 30px;
+
+.study-sidebar h2 {
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+
+    white-space: nowrap;
+}
+
+
+.sidebar-chapters {
+    margin-top: 20px;
 }
 
 .sidebar-chapter {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-
-    padding: 13px 10px;
-    margin-bottom: 8px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    transition: background 0.2s ease;
-}
-
-.sidebar-chapter:hover {
-    background: #fff8c9;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: #f5f0e6;
+    overflow: hidden;
 }
 
 .sidebar-chapter.active {
@@ -390,16 +398,109 @@ body {
     border: 2px solid #29251f;
 }
 
-.sidebar-chapter span {
+.sidebar-chapter summary {
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 10px 12px;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.sidebar-chapter summary::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar-chapter summary::before {
+    content: "▸";
+
+    width: 15px;
+    min-width: 15px;
+
+    flex-shrink: 0;
+
+    font-size: 12px;
+}
+
+.sidebar-chapter[open] summary::before {
+    content: "▾";
+}
+
+.sidebar-chapter summary span {
+    width: 30px;
+    min-width: 30px;
+
+    flex-shrink: 0;
+
     color: #81796d;
+    font-family: Georgia, serif;
     font-size: 13px;
 }
 
-.sidebar-chapter p {
+.sidebar-chapter summary p {
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    margin: 0;
+
     font-size: 14px;
+    line-height: 1.35;
+
+    white-space: normal;
 }
 
-/* Menu Button */
+.sidebar-chapter summary:hover {
+    background: #fff8c9;
+}
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 4px 15px 14px 47px;
+}
+
+.sidebar-options button {
+    width: 100%;
+    min-height: 36px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #29251f;
+    border-radius: 7px;
+
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.sidebar-options button:first-child {
+    background: #dff1ff;
+}
+
+.sidebar-options button:last-child {
+    background: #ffe3e3;
+}
+
+.sidebar-options button:hover {
+    transform: translateX(3px);
+    box-shadow: 2px 2px 0 #29251f;
+}
+
 
 .menu-btn {
     position: fixed;
@@ -423,17 +524,17 @@ body {
 
     box-shadow: 3px 3px 0 #29251f;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease;
 }
 
 .menu-btn:hover {
     transform: rotate(-3deg);
 }
 
-/* Main Study Area */
-
 .study-content {
     flex: 1;
+
     min-width: 0;
     min-height: 100vh;
 
@@ -446,10 +547,12 @@ body {
     transition: all 0.4s ease;
 }
 
+
 .study-header {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -483,3 +586,101 @@ body {
 .open-notes-btn:hover {
     transform: translateY(-2px);
 }
+
+
+.notes-page {
+    min-height: 100vh;
+
+    padding: 45px 7%;
+
+    background: #fffdf5;
+
+    background-image:
+        linear-gradient(
+            rgba(100, 150, 190, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 100% 32px;
+}
+
+.notes-page h1 {
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+
+    font-size: 48px;
+
+    margin-bottom: 30px;
+}
+
+.pdf-container {
+    width: 100%;
+    max-width: 1100px;
+
+    background: white;
+
+    border: 2px solid #29251f;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 6px 6px 0 #29251f;
+}
+
+.pdf-container iframe {
+    display: block;
+
+    width: 100%;
+
+    min-height: 700px;
+
+    border: none;
+}
+
+
+
+@media (max-width: 800px) {
+
+    .study-sidebar {
+        width: 250px;
+        min-width: 250px;
+    }
+
+    .study-content {
+        padding: 35px 25px;
+    }
+
+    .study-header h1 {
+        font-size: 32px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .study-sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .study-content {
+        padding: 30px 20px;
+    }
+
+    .study-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .study-header h1 {
+        font-size: 28px;
+    }
+
+    .video-container {
+        height: 350px;
+    }
+
+}
+
+
