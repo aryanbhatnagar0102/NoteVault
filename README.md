@@ -32,4 +32,9 @@ Clone the repository:
 ```bash
 git clone https://github.com/aryanbhatnagar0102/NoteVault.git
 
-or Download the Zip file. 
+or Download the Zip file.
+```
+## AI usage
+
+I used AI for UI, First I did the basic layout by myself but i wanted to enhance the UI to handwritten notes form, so i used chatGPT to enhance the UI to handwritten form and to make it more attractive, almost everything after that is done by UI but I polished it later by myself too.
+
