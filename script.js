@@ -1,144 +1,122 @@
-
 document.getElementById("app").innerHTML = `
-  <div class ="home-page">
+    <div class="home-page">
+        <header class="site-header">
+            <div class="logo">
+                Note<span>Vault</span>
+            </div>
 
-    <header class="site-header">
-       <div class="logo">
-         Note<span>Vault</span>
-        </div>
+            <nav class="top-nav">
+                <button class="nav-active">
+                    Home
+                </button>
 
-       <nav class="top-nav">
-          <button class="nav-active">Home</button>
-          <button>About</button>
-          <button class="theme-btn">☼</button>
-        </nav>
-    </header>
+                <button class="theme-btn" onclick="toggleDarkMode()">
+                    ☼
+                </button>
+            </nav>
+        </header>
 
-    <main class="home-content">
+        <div class="home-content">
+            <div class="left-note side-note">
+                Study
+                <br>
+                Learn
+                <br>
+                Revise
+                <br>
+                Grow
 
-      <div class="side-note left-note">
-        <span>Study</span>
-        <span>Learn</span>
-        <span>Revise</span>
-        <span>Grow</span>
-        <div>↘</div>
-      </div>
+                <div>↘</div>
+            </div>
 
-      <div class="hero">
-         <div class="hero-title">
-            <div class="hero-doodle">♧</div>
-
-            <h1>
-              Note<span>Vault</span>
-            </h1>
-
-            <div class="crown">♕</div>
-        </div>
-
-        <h2>Class 12 PCMB</h2>
-
-        <p>
-          Handwritten Notes and Video Lectures,
-          all in one place.
-        </p>
-      </div>
-
-      <div class="side-note right-note">
-
+            <div class="right-note side-note">
                 <p>✓ Notes</p>
                 <p>✓ Video Lectures</p>
                 <p>✓ All Chapters</p>
                 <p>✓ One Place</p>
-
             </div>
 
-        <section class="subjects">
+            <header class="hero">
+                <div class="hero-title">
+                    <span class="hero-doodle">♧</span>
 
-                <div class="subject-card physics">
+                    <h1>
+                        NoteVault
+                    </h1>
 
-                    <div class="subject-icon">⚛</div>
-
-                    <h2>Physics</h2>
-
-                    <div class="card-arrow">→</div>
-
+                    <span class="crown">♛</span>
                 </div>
 
+                <h2>
+                    Class 12 PCMB
+                </h2>
+
+                <p>
+                    Your handwritten notes and video lectures,
+                    all in one place.
+                </p>
+            </header>
+
+            <section class="subjects">
+                <div class="subject-card physics">
+                    <div class="subject-icon">⚛</div>
+                    <h2>Physics</h2>
+                    <div class="card-arrow">→</div>
+                </div>
 
                 <div class="subject-card chemistry">
-
-                    <div class="subject-icon">⚗</div>
-
+                    <div class="subject-icon">🧪</div>
                     <h2>Chemistry</h2>
-
                     <div class="card-arrow">→</div>
-
                 </div>
-
 
                 <div class="subject-card mathematics">
-
-                    <div class="subject-icon">△</div>
-
+                    <div class="subject-icon">∑</div>
                     <h2>Mathematics</h2>
-
                     <div class="card-arrow">→</div>
-
                 </div>
-
 
                 <div class="subject-card biology">
-
-                    <div class="subject-icon">♧</div>
-
+                    <div class="subject-icon">🧬</div>
                     <h2>Biology</h2>
-
                     <div class="card-arrow">→</div>
-
                 </div>
-
             </section>
 
-            <div class="home-bottom">
+            <div class="home-star star-one">☆</div>
+            <div class="home-star star-two">✦</div>
+            <div class="home-star star-three">✧</div>
 
-                <span>"Same Syllabus.</span>
+            <p class="home-bottom">
+                "Same Syllabus.
                 <u>Less Scrolling.</u>
-                <span>More Learning."</span>
+                More Learning."
+
                 <span class="smile">☺</span>
-
-            </div>
-
-            <div class="home-star star-one">✦</div>
-            <div class="home-star star-two">✧</div>
-            <div class="home-star star-three">✦</div>
-
-        </main>
-
+            </p>
+        </div>
     </div>
-
-`
+`;
 
 const physicsCard = document.querySelector(".physics");
-const chemistryCard = document.querySelector(".chemistry");
-const mathematicsCard = document.querySelector(".mathematics");
-const biologyCard = document.querySelector(".biology");
-
 physicsCard.addEventListener("click", () => {
     showPhysics();
 });
 
+const chemistryCard = document.querySelector(".chemistry");
 chemistryCard.addEventListener("click", () => {
     showChemistry();
 });
 
+const mathematicsCard = document.querySelector(".mathematics");
 mathematicsCard.addEventListener("click", () => {
     showMathematics();
 });
 
+const biologyCard = document.querySelector(".biology");
 biologyCard.addEventListener("click", () => {
     showBiology();
 });
-
 
 const physicsChapters = [
     {
@@ -211,7 +189,7 @@ const physicsChapters = [
         number: "12",
         name: "Atoms",
         pdf: "resources/physics/Atoms_Notes.pdf",
-        video: "https://www.youtube.com/embed/uf2UvFqUoXE?si=67A3QVMnE2JBk3sZ"
+        video: "https://www.youtube.com/embed/uf2UvFqUoXE?si=67A3QVMnE2JB3sZ"
     },
     {
         number: "13",
@@ -226,7 +204,6 @@ const physicsChapters = [
         video: "https://www.youtube.com/embed/03PgdzPn-XE?si=GT30y2wqFPgDO98X"
     }
 ];
-
 
 const chemistryChapters = [
     {
@@ -290,7 +267,6 @@ const chemistryChapters = [
         video: "https://www.youtube.com/embed/ZzSHpxjH6Kg?si=BDXPqFYXpzp4hqo6"
     }
 ];
-
 
 const mathematicsChapters = [
     {
@@ -373,7 +349,6 @@ const mathematicsChapters = [
     }
 ];
 
-
 const biologyChapters = [
     {
         number: "01",
@@ -455,7 +430,6 @@ const biologyChapters = [
     }
 ];
 
-
 const subjectData = {
     physics: physicsChapters,
     chemistry: chemistryChapters,
@@ -470,91 +444,197 @@ const subjectNames = {
     biology: "Biology"
 };
 
+const subjectIcons = {
+    physics: "⚛",
+    chemistry: "⚗",
+    mathematics: "△",
+    biology: "❧"
+};
 
-function showSubject(subject) {
-    const chapters = subjectData[subject];
+function createSubjectSidebar(activeSubject) {
+    return `
+        <aside class="subject-sidebar">
+            <button
+                class="subject-switch ${activeSubject === "physics" ? "active" : ""}"
+                onclick="showPhysics()"
+            >
+                <span class="subject-switch-icon">⚛</span>
+                Physics
+            </button>
+
+            <button
+                class="subject-switch ${activeSubject === "chemistry" ? "active" : ""}"
+                onclick="showChemistry()"
+            >
+                <span class="subject-switch-icon">⚗</span>
+                Chemistry
+            </button>
+
+            <button
+                class="subject-switch ${activeSubject === "mathematics" ? "active" : ""}"
+                onclick="showMathematics()"
+            >
+                <span class="subject-switch-icon">△</span>
+                Mathematics
+            </button>
+
+            <button
+                class="subject-switch ${activeSubject === "biology" ? "active" : ""}"
+                onclick="showBiology()"
+            >
+                <span class="subject-switch-icon">❧</span>
+                Biology
+            </button>
+
+            <div class="subject-note">
+                All 4 subjects here,
+                you can switch anytime!
+            </div>
+        </aside>
+    `;
+}
+
+function renderSubjectPage(subject, chapters) {
+    const subjectName = subjectNames[subject];
 
     document.getElementById("app").innerHTML = `
         <div class="subject-page">
+            <header class="subject-topbar">
+                <div class="subject-logo">
+                    Note<span>Vault</span>
+                </div>
 
-            <button class="back-btn" onclick="goHome()">
-                ← Back
-            </button>
+                <div class="subject-top-actions">
+                    <button
+                        class="theme-btn"
+                        onclick="toggleDarkMode()"
+                    >
+                        ☼
+                    </button>
 
-            <header class="subject-header">
-                <p>CLASS 12 • ${subjectNames[subject].toUpperCase()}</p>
-                <h1>${subjectNames[subject]}</h1>
-                <span>Choose a chapter to start studying</span>
+                    <button>
+                        ☰
+                    </button>
+                </div>
             </header>
 
-            <div class="chapter-list">
+            ${createSubjectSidebar(subject)}
 
-                ${chapters.map(chapter => `
-                    <div class="chapter"
-                         onclick="toggleChapter(this, '${chapter.number}', '${subject}')">
+            <main class="subject-main">
+                <button
+                    class="back-btn"
+                    onclick="goHome()"
+                >
+                    ← Back
+                </button>
 
-                        <span>${chapter.number}</span>
-                        <h3>${chapter.name}</h3>
-
+                <header class="subject-main-header">
+                    <div class="subject-symbol">
+                        ${subjectIcons[subject]}
                     </div>
-                `).join("")}
 
-            </div>
+                    <h1>
+                        ${subjectName}
+                    </h1>
 
+                    <br>
+
+                    <p>
+                        Explore all chapters and access
+                        handwritten notes and video lectures.
+                    </p>
+                </header>
+
+                <div class="chapter-list">
+                    ${chapters.map(chapter => `
+                        <div
+                            class="chapter"
+                            onclick="
+                                toggleChapter(
+                                    this,
+                                    '${chapter.number}',
+                                    '${subject}'
+                                )
+                            "
+                        >
+                            <span>
+                                ${chapter.number}
+                            </span>
+
+                            <h3>
+                                ${chapter.name}
+                            </h3>
+                        </div>
+                    `).join("")}
+                </div>
+            </main>
         </div>
     `;
 }
 
-
 function showPhysics() {
-    showSubject("physics");
+    renderSubjectPage(
+        "physics",
+        physicsChapters
+    );
 }
 
 function showChemistry() {
-    showSubject("chemistry");
+    renderSubjectPage(
+        "chemistry",
+        chemistryChapters
+    );
 }
 
 function showMathematics() {
-    showSubject("mathematics");
+    renderSubjectPage(
+        "mathematics",
+        mathematicsChapters
+    );
 }
 
 function showBiology() {
-    showSubject("biology");
+    renderSubjectPage(
+        "biology",
+        biologyChapters
+    );
 }
-
 
 function goHome() {
     location.reload();
 }
 
+function toggleChapter(
+    chapterElement,
+    chapterNumber,
+    subject
+) {
+    document
+        .querySelectorAll(".chapter")
+        .forEach(item => {
+            if (item !== chapterElement) {
+                item.classList.remove("open");
 
-function goBackToSubject(subject) {
-    showSubject(subject);
-}
+                const options =
+                    item.querySelector(
+                        ".chapter-options"
+                    );
 
-
-function toggleChapter(chapterElement, chapterNumber, subject) {
-
-    document.querySelectorAll(".chapter").forEach(item => {
-
-        if (item !== chapterElement) {
-
-            item.classList.remove("open");
-
-            const options = item.querySelector(".chapter-options");
-
-            if (options) {
-                options.remove();
+                if (options) {
+                    options.remove();
+                }
             }
-        }
-    });
+        });
 
-
-    if (chapterElement.classList.contains("open")) {
-
+    if (
+        chapterElement.classList.contains("open")
+    ) {
         chapterElement.classList.remove("open");
 
-        const options = chapterElement.querySelector(".chapter-options");
+        const options =
+            chapterElement.querySelector(
+                ".chapter-options"
+            );
 
         if (options) {
             options.remove();
@@ -563,186 +643,258 @@ function toggleChapter(chapterElement, chapterNumber, subject) {
         return;
     }
 
-
     chapterElement.classList.add("open");
 
-    chapterElement.insertAdjacentHTML("beforeend", `
+    chapterElement.insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="chapter-options">
-
-            <button onclick="event.stopPropagation(); openNotes('${subject}', '${chapterNumber}')">
+            <button
+                onclick="
+                    event.stopPropagation();
+                    openNotes(
+                        '${subject}',
+                        '${chapterNumber}'
+                    )
+                "
+            >
                 📄 Handwritten Notes
+                <br>
+                <small>Open notes in PDF viewer</small>
             </button>
 
-            <button onclick="event.stopPropagation(); openVideo('${subject}', '${chapterNumber}')">
+            <button
+                onclick="
+                    event.stopPropagation();
+                    openVideo(
+                        '${subject}',
+                        '${chapterNumber}'
+                    )
+                "
+            >
                 🎥 Video Lecture
+                <br>
+                <small>Watch the full lecture</small>
             </button>
-
         </div>
-    `);
+        `
+    );
 }
 
-
-function createStudyNavigation(subject) {
+function createStudySidebar(
+    subject,
+    chapterNumber,
+    chapters
+) {
     return `
-        <div class="study-navigation">
-
-            <button class="menu-btn" onclick="toggleSidebar()">
-                ☰
-            </button>
-
-            <button class="nav-home-btn" onclick="goHome()">
-                🏠 Home
-            </button>
-
-            <button class="nav-back-btn" onclick="goBackToSubject('${subject}')">
-                ← Back
-            </button>
-
-        </div>
-    `;
-}
-
-
-function createSidebar(subject, chapterNumber) {
-
-    const chapters = subjectData[subject];
-
-    return `
-        <aside class="study-sidebar" id="studySidebar">
-
-            <h2>${subjectNames[subject]}</h2>
+        <aside
+            class="study-sidebar"
+            id="studySidebar"
+        >
+            <h2>
+                ${subjectNames[subject]}
+            </h2>
 
             <div class="sidebar-chapters">
-
                 ${chapters.map(item => `
                     <details
-                        class="sidebar-chapter ${item.number === chapterNumber ? "active" : ""}"
-                        onclick="closeOtherDropdowns(this)"
+                        class="
+                            sidebar-chapter
+                            ${
+                                item.number === chapterNumber
+                                    ? "active"
+                                    : ""
+                            }
+                        "
+                        data-chapter="${item.number}"
+                        onclick="
+                            setActiveSidebarChapter(this);
+                            closeOtherDropdowns(this)
+                        "
                     >
-
                         <summary>
+                            <span>
+                                ${item.number}
+                            </span>
 
-                            <span>${item.number}</span>
-
-                            <p>${item.name}</p>
-
+                            <p>
+                                ${item.name}
+                            </p>
                         </summary>
 
                         <div class="sidebar-options">
-
                             <button
-                                onclick="event.stopPropagation(); openNotes('${subject}', '${item.number}')"
+                                onclick="
+                                    event.stopPropagation();
+                                    openNotes(
+                                        '${subject}',
+                                        '${item.number}'
+                                    )
+                                "
                             >
                                 📄 Notes
                             </button>
 
                             <button
-                                onclick="event.stopPropagation(); openVideo('${subject}', '${item.number}')"
+                                onclick="
+                                    event.stopPropagation();
+                                    openVideo(
+                                        '${subject}',
+                                        '${item.number}'
+                                    )
+                                "
                             >
                                 🎥 Video
                             </button>
-
                         </div>
-
                     </details>
                 `).join("")}
-
             </div>
-
         </aside>
     `;
 }
 
+function createStudyNavigation(subject) {
+    return `
+        <div class="study-navigation">
+            <button
+                class="menu-btn"
+                onclick="toggleSidebar()"
+            >
+                ☰
+            </button>
 
-function openNotes(subject, chapterNumber) {
+            <button
+                class="nav-home-btn"
+                onclick="goHome()"
+            >
+                🏠 Home
+            </button>
 
-    const chapters = subjectData[subject];
+            <button
+                class="nav-back-btn"
+                onclick="
+                    renderSubjectPage(
+                        '${subject}',
+                        subjectData['${subject}']
+                    )
+                "
+            >
+                ← Back
+            </button>
+        </div>
+    `;
+}
 
-    const chapter = chapters.find(
-        item => item.number === chapterNumber
-    );
+function openNotes(
+    subject,
+    chapterNumber
+) {
+    const chapters =
+        subjectData[subject];
 
-    if (!chapter) {
-        return;
-    }
+    const chapter =
+        chapters.find(
+            item =>
+                item.number === chapterNumber
+        );
 
-    document.getElementById("app").innerHTML = `
-
+    document.getElementById(
+        "app"
+    ).innerHTML = `
         <div class="study-page">
 
-            ${createStudyNavigation(subject)}
+            ${createStudySidebar(
+                subject,
+                chapterNumber,
+                chapters
+            )}
 
-            ${createSidebar(subject, chapterNumber)}
+            ${createStudyNavigation(
+                subject
+            )}
 
-            <main class="study-content notes-content">
+            <button
+                class="study-theme-btn"
+                onclick="toggleDarkMode()"
+            >
+                ☼
+            </button>
 
+            <main class="study-content">
                 <div class="study-header">
-
-                    <h1>${chapter.name}</h1>
-
+                    <h1>
+                        ${chapter.name}
+                    </h1>
                 </div>
 
                 <div class="pdf-container">
-
                     <iframe
-                        src="${chapter.pdf}#navpanes=0"
+                        src="${chapter.pdf}"
                         title="${chapter.name} Notes"
-                        width="100%"
-                        height="700px">
+                    >
                     </iframe>
-
                 </div>
-
             </main>
 
         </div>
     `;
 }
 
+function openVideo(
+    subject,
+    chapterNumber
+) {
+    const chapters =
+        subjectData[subject];
 
-function openVideo(subject, chapterNumber) {
+    const chapter =
+        chapters.find(
+            item =>
+                item.number === chapterNumber
+        );
 
-    const chapters = subjectData[subject];
-
-    const chapter = chapters.find(
-        item => item.number === chapterNumber
-    );
-
-    if (!chapter) {
-        return;
-    }
-
-    document.getElementById("app").innerHTML = `
-
+    document.getElementById(
+        "app"
+    ).innerHTML = `
         <div class="study-page">
 
-            ${createStudyNavigation(subject)}
+            ${createStudySidebar(
+                subject,
+                chapterNumber,
+                chapters
+            )}
 
-            ${createSidebar(subject, chapterNumber)}
+            ${createStudyNavigation(
+                subject
+            )}
 
             <main class="study-content">
 
                 <div class="study-header">
-
-                    <h1>${chapter.name}</h1>
+                    <h1>
+                        ${chapter.name}
+                    </h1>
 
                     <button
                         class="open-notes-btn"
-                        onclick="studyWithNotes('${subject}', '${chapter.number}')"
+                        onclick="
+                            studyWithNotes(
+                                '${subject}',
+                                '${chapter.number}'
+                            )
+                        "
                     >
                         📖 Study with Notes
                     </button>
-
                 </div>
 
                 <div class="video-container">
-
                     <iframe
                         src="${chapter.video}"
                         title="${chapter.name} Lecture"
                         allowfullscreen>
                     </iframe>
-
                 </div>
 
             </main>
@@ -751,92 +903,154 @@ function openVideo(subject, chapterNumber) {
     `;
 }
 
+function studyWithNotes(
+    subject,
+    chapterNumber
+) {
+    const chapters =
+        subjectData[subject];
 
-function studyWithNotes(subject, chapterNumber) {
+    const chapter =
+        chapters.find(
+            item =>
+                item.number === chapterNumber
+        );
 
-    const chapters = subjectData[subject];
+    const studyPage =
+        document.querySelector(
+            ".study-page"
+        );
 
-    const chapter = chapters.find(
-        item => item.number === chapterNumber
-    );
+    const sidebar =
+        document.getElementById(
+            "studySidebar"
+        );
 
-    if (!chapter) {
-        return;
-    }
-
-    const studyPage = document.querySelector(".study-page");
-    const sidebar = document.getElementById("studySidebar");
-    const existingNotes = document.querySelector(".notes-panel");
-
-    if (!studyPage || !sidebar) {
-        return;
-    }
-
+    const existingNotes =
+        document.querySelector(
+            ".notes-panel"
+        );
 
     if (existingNotes) {
-
         existingNotes.remove();
 
-        sidebar.classList.remove("collapsed");
+        sidebar.classList.remove(
+            "collapsed"
+        );
 
-        studyPage.classList.remove("notes-mode");
+        studyPage.classList.remove(
+            "notes-mode"
+        );
 
         return;
     }
 
+    sidebar.classList.add(
+        "collapsed"
+    );
 
-    sidebar.classList.add("collapsed");
+    studyPage.classList.add(
+        "notes-mode"
+    );
 
-    studyPage.classList.add("notes-mode");
-
-
-    studyPage.insertAdjacentHTML("beforeend", `
-
+    studyPage.insertAdjacentHTML(
+        "beforeend",
+        `
         <aside class="notes-panel">
-
             <div class="notes-panel-header">
+                <h2>
+                    📄 Notes
+                </h2>
 
-                <h2>📄 Notes</h2>
-
-                <span>${chapter.name}</span>
-
+                <span>
+                    ${chapter.name}
+                </span>
             </div>
 
             <div class="notes-panel-pdf">
-
                 <iframe
                     src="${chapter.pdf}#navpanes=0"
                     title="${chapter.name} Notes"
-                    width="100%"
-                    height="100%">
+                >
                 </iframe>
-
             </div>
-
         </aside>
-    `);
+        `
+    );
 }
-
 
 function toggleSidebar() {
+    const sidebar =
+        document.getElementById(
+            "studySidebar"
+        );
 
-    const sidebar = document.getElementById("studySidebar");
+    sidebar.classList.toggle(
+        "collapsed"
+    );
+}
 
-    if (!sidebar) {
-        return;
+function setActiveSidebarChapter(
+    current
+) {
+    document
+        .querySelectorAll(
+            ".sidebar-chapter"
+        )
+        .forEach(item => {
+            item.classList.remove(
+                "active"
+            );
+        });
+
+    current.classList.add(
+        "active"
+    );
+}
+
+function closeOtherDropdowns(
+    current
+) {
+    document
+        .querySelectorAll(
+            ".sidebar-chapter"
+        )
+        .forEach(item => {
+            if (item !== current) {
+                item.removeAttribute(
+                    "open"
+                );
+            }
+        });
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle(
+        "dark-mode"
+    );
+
+    const isDark =
+        document.body.classList.contains(
+            "dark-mode"
+        );
+
+    localStorage.setItem(
+        "notevault-dark-mode",
+        isDark ? "true" : "false"
+    );
+}
+
+function loadDarkMode() {
+    const isDark =
+        localStorage.getItem(
+            "notevault-dark-mode"
+        ) === "true";
+
+    if (isDark) {
+        document.body.classList.add(
+            "dark-mode"
+        );
     }
-
-    sidebar.classList.toggle("collapsed");
 }
 
-
-function closeOtherDropdowns(current) {
-
-    document.querySelectorAll(".sidebar-chapter").forEach(item => {
-
-        if (item !== current) {
-            item.removeAttribute("open");
-        }
-
-    });
-}
+loadDarkMode();
