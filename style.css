@@ -4,16 +4,23 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     background: #f5f0e6;
     font-family: "Segoe Print", "Comic Sans MS", cursive;
     color: #29251f;
+    overflow-x: hidden;
 }
 
 #app {
     min-height: 100vh;
+    width: 100%;
 }
+
 
 .home-page {
     min-height: 100vh;
@@ -113,29 +120,6 @@ body {
     font-size: 15px;
 }
 
-@media (max-width: 900px) {
-    .subjects {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 550px) {
-    .home-page {
-        padding: 45px 20px;
-    }
-
-    .hero h1 {
-        font-size: 52px;
-    }
-
-    .tagline {
-        font-size: 16px;
-    }
-
-    .subjects {
-        grid-template-columns: 1fr;
-    }
-}
 
 .subject-page {
     min-height: 100vh;
@@ -149,6 +133,7 @@ body {
         );
     background-size: 100% 32px;
     border-left: 3px solid #d96b6b;
+    overflow-x: hidden;
 }
 
 .back-btn {
@@ -158,6 +143,7 @@ body {
     cursor: pointer;
     color: #625c52;
     margin-bottom: 40px;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
 }
 
 .back-btn:hover {
@@ -190,7 +176,9 @@ body {
     color: #625c52;
 }
 
+
 .chapter-list {
+    width: 100%;
     max-width: 900px;
 }
 
@@ -198,6 +186,7 @@ body {
     display: flex;
     align-items: center;
     gap: 25px;
+    width: 100%;
     padding: 18px 25px;
     margin-bottom: 14px;
     background: rgba(255, 253, 245, 0.85);
@@ -225,6 +214,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     font-family: "Segoe Print", "Comic Sans MS", cursive;
+    line-height: 1.4;
 }
 
 .chapter-options {
@@ -262,40 +252,32 @@ body {
     box-shadow: 5px 5px 0 #29251f;
 }
 
-.video-container {
-    width: 100%;
-    max-width: 1000px;
-    height: 560px;
-    background: #000;
-    border: 2px solid #29251f;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 6px 6px 0 #29251f;
-}
-
-.video-container iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
 
 .study-page {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     background: #fffdf5;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .study-sidebar {
     width: 300px;
     min-width: 300px;
     min-height: 100vh;
-    padding: 35px 20px;
+    height: 100vh;
+    padding: 90px 20px 35px;
     background: #f5f0e6;
     border-right: 2px solid #29251f;
-    transition: width 0.4s ease, min-width 0.4s ease, padding 0.4s ease;
+    transition:
+        width 0.4s ease,
+        min-width 0.4s ease,
+        padding 0.4s ease,
+        transform 0.4s ease;
     overflow-y: auto;
     overflow-x: hidden;
+    flex-shrink: 0;
 }
 
 .study-sidebar.collapsed {
@@ -334,7 +316,6 @@ body {
 
 .sidebar-chapter summary {
     width: 100%;
-    height: 70px;
     min-height: 70px;
     display: flex;
     align-items: center;
@@ -415,34 +396,71 @@ body {
     box-shadow: 2px 2px 0 #29251f;
 }
 
-.menu-btn {
-    position: fixed;
+
+.study-navigation {
+    position: absolute;
     top: 20px;
     left: 20px;
-    z-index: 20;
-    width: 45px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-btn,
+.nav-home-btn,
+.nav-back-btn {
     height: 45px;
     border: 2px solid #29251f;
     border-radius: 10px;
     background: #fff8c9;
-    font-size: 22px;
+    color: #29251f;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
     box-shadow: 3px 3px 0 #29251f;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-.menu-btn:hover {
-    transform: rotate(-3deg);
+.menu-btn {
+    width: 45px;
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    flex-shrink: 0;
 }
+
+.nav-home-btn,
+.nav-back-btn {
+    padding: 0 15px;
+    white-space: nowrap;
+}
+
+.menu-btn:hover,
+.nav-home-btn:hover,
+.nav-back-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #29251f;
+}
+
+.menu-btn:active,
+.nav-home-btn:active,
+.nav-back-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #29251f;
+}
+
 
 .study-content {
-    flex: 1;
+    flex: 1 1 auto;
     min-width: 0;
     min-height: 100vh;
-    padding: 45px 5%;
+    padding: 90px 5% 45px;
     display: block;
     color: #29251f;
-    transition: all 0.4s ease;
+    transition:
+        width 0.4s ease,
+        padding 0.4s ease;
 }
 
 .study-header {
@@ -456,7 +474,9 @@ body {
 .study-header h1 {
     font-family: "Segoe Print", "Comic Sans MS", cursive;
     font-size: 42px;
+    line-height: 1.25;
     margin: 0;
+    overflow-wrap: anywhere;
 }
 
 .open-notes-btn {
@@ -467,33 +487,39 @@ body {
     font-family: "Segoe Print", "Comic Sans MS", cursive;
     cursor: pointer;
     box-shadow: 3px 3px 0 #29251f;
+    flex-shrink: 0;
 }
 
 .open-notes-btn:hover {
     transform: translateY(-2px);
 }
 
-.notes-page {
-    min-height: 100vh;
-    padding: 45px 7%;
-    background: #fffdf5;
-    background-image:
-        linear-gradient(
-            rgba(100, 150, 190, 0.18) 1px,
-            transparent 1px
-        );
-    background-size: 100% 32px;
+
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    background: #000;
+    border: 2px solid #29251f;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 #29251f;
 }
 
-.notes-page h1 {
-    font-family: "Segoe Print", "Comic Sans MS", cursive;
-    font-size: 48px;
-    margin-bottom: 30px;
+.video-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
+
 
 .pdf-container {
     width: 100%;
     max-width: 1100px;
+    height: calc(100vh - 170px);
+    min-height: 650px;
     background: white;
     border: 2px solid #29251f;
     border-radius: 10px;
@@ -504,21 +530,23 @@ body {
 .pdf-container iframe {
     display: block;
     width: 100%;
-    min-height: 700px;
+    height: 100%;
     border: none;
 }
+
 
 .notes-panel {
     width: 40%;
     flex: 0 0 40%;
     height: 100vh;
-    padding: 25px 18px;
+    padding: 90px 18px 25px;
     background: #f5f0e6;
     border-left: 2px solid #29251f;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     overflow: hidden;
+    min-width: 0;
 }
 
 .notes-panel-header {
@@ -535,6 +563,7 @@ body {
 .notes-panel-header span {
     font-size: 13px;
     color: #777064;
+    overflow-wrap: anywhere;
 }
 
 .notes-panel-pdf {
@@ -560,7 +589,7 @@ body {
     width: 60%;
     flex: 0 0 60%;
     min-width: 0;
-    padding: 25px 3%;
+    padding: 90px 3% 25px;
 }
 
 .notes-mode .study-header {
@@ -571,7 +600,8 @@ body {
 .notes-mode .study-header h1 {
     font-size: 32px;
     line-height: 1.2;
-    max-width: 55%;
+    max-width: 60%;
+    margin: 0;
 }
 
 .notes-mode .open-notes-btn {
@@ -579,116 +609,432 @@ body {
     font-size: 13px;
 }
 
-.notes-mode .video-container {
-    margin-top: 0;
-}
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+
+    .home-page {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     .subjects {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 850px;
+    }
+
+    .study-sidebar {
+        width: 270px;
+        min-width: 270px;
+    }
+
+    .study-content {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .study-header h1 {
+        font-size: 36px;
+    }
+
+    .notes-mode .study-content {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .notes-mode .study-header h1 {
+        font-size: 28px;
     }
 }
 
-@media (max-width: 800px) {
+
+@media (max-width: 850px) {
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .subject-page {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
     .study-sidebar {
         width: 250px;
         min-width: 250px;
     }
 
     .study-content {
-        padding: 35px 25px;
+        padding: 85px 25px 35px;
+    }
+
+    .study-header {
+        align-items: flex-start;
     }
 
     .study-header h1 {
         font-size: 32px;
     }
 
+    .notes-mode .study-content {
+        width: 60%;
+        flex: 0 0 60%;
+        padding: 85px 20px 25px;
+    }
+
     .notes-panel {
         width: 40%;
         flex: 0 0 40%;
     }
+
+    .notes-mode .study-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notes-mode .study-header h1 {
+        max-width: 100%;
+    }
+
+    .notes-mode .open-notes-btn {
+        width: auto;
+    }
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 700px) {
+
+    .home-page {
+        padding: 45px 25px;
+    }
+
+    .hero {
+        margin-bottom: 45px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .small-title {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .subjects {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .subject-card {
+        min-height: 190px;
+    }
+
+    .footer-text {
+        margin-top: 40px;
+    }
+
+    .subject-page {
+        padding: 30px 20px 50px;
+        border-left-width: 2px;
+    }
+
+    .back-btn {
+        margin-bottom: 30px;
+    }
+
+    .subject-header {
+        margin-bottom: 30px;
+    }
+
+    .subject-header h1 {
+        font-size: 45px;
+    }
+
+    .subject-header p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .chapter {
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .chapter h3 {
+        flex: 1;
+        min-width: 0;
+        font-size: 16px;
+    }
+
+    .chapter-options {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .chapter-options button {
+        width: 100%;
+    }
+
+
+    .study-navigation {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        gap: 7px;
+    }
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+
+    .nav-home-btn,
+    .nav-back-btn {
+        height: 42px;
+        padding: 0 11px;
+        font-size: 12px;
+    }
+
+
     .study-sidebar {
-        width: 220px;
-        min-width: 220px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 900;
+        width: 270px;
+        min-width: 270px;
+        height: 100vh;
+        min-height: 100vh;
+        padding: 75px 18px 30px;
+        box-shadow: 6px 0 0 rgba(41, 37, 31, 0.12);
+        transform: translateX(0);
+    }
+
+    .study-sidebar.collapsed {
+        width: 270px;
+        min-width: 270px;
+        padding-left: 18px;
+        padding-right: 18px;
+        border-right: 2px solid #29251f;
+        transform: translateX(-100%);
+    }
+
+    .study-sidebar h2 {
+        font-size: 22px;
     }
 
     .study-content {
-        padding: 30px 20px;
+        width: 100%;
+        flex: 1 1 100%;
+        padding: 75px 18px 30px;
     }
 
     .study-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 22px;
     }
 
     .study-header h1 {
+        width: 100%;
         font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .open-notes-btn {
+        width: 100%;
+        padding: 11px 15px;
     }
 
     .video-container {
-        height: 350px;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-width: none;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 4px 4px 0 #29251f;
+    }
+
+    .pdf-container {
+        width: 100%;
+        max-width: none;
+        height: calc(100vh - 125px);
+        min-height: 500px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 0 #29251f;
+    }
+
+
+    .notes-mode {
+        flex-direction: column;
+    }
+
+    .notes-mode .study-content {
+        width: 100%;
+        flex: 0 0 auto;
+        min-height: auto;
+        padding: 75px 18px 25px;
+    }
+
+    .notes-mode .study-header {
+        margin-bottom: 18px;
+    }
+
+    .notes-mode .study-header h1 {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        font-size: 27px;
+    }
+
+    .notes-mode .open-notes-btn {
+        width: 100%;
     }
 
     .notes-panel {
         width: 100%;
-        flex: 0 0 100%;
-        height: 100vh;
-        position: absolute;
-        right: 0;
-        top: 0;
+        flex: 0 0 auto;
+        height: 70vh;
+        min-height: 500px;
+        padding: 25px 18px 18px;
+        border-left: none;
+        border-top: 2px solid #29251f;
+        order: 2;
+    }
+
+    .notes-panel-header {
+        margin-bottom: 12px;
+    }
+
+    .notes-panel-header h2 {
+        font-size: 21px;
+    }
+
+    .notes-panel-pdf {
+        min-height: 0;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .home-page {
+        padding: 35px 16px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .subject-card {
+        min-height: 170px;
+        padding: 25px 18px;
+    }
+
+    .subject-icon {
+        font-size: 38px;
+        margin-bottom: 12px;
+    }
+
+    .subject-card h2 {
+        font-size: 24px;
+    }
+
+
+    .subject-page {
+        padding: 25px 14px 40px;
+    }
+
+    .subject-header h1 {
+        font-size: 38px;
+    }
+
+    .subject-header span {
+        font-size: 14px;
+    }
+
+    .chapter {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .chapter span {
+        font-size: 12px;
+    }
+
+    .chapter h3 {
+        font-size: 15px;
+    }
+
+
+    .study-navigation {
+        left: 8px;
+        right: 8px;
+        gap: 5px;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .nav-home-btn,
+    .nav-back-btn {
+        height: 40px;
+        padding: 0 8px;
+        font-size: 11px;
+    }
+
+    .study-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .study-header h1 {
+        font-size: 25px;
+    }
+
+    .video-container {
+        border-radius: 7px;
+        box-shadow: 3px 3px 0 #29251f;
+    }
+
+    .pdf-container {
+        min-height: 450px;
+        height: calc(100vh - 120px);
+        border-radius: 7px;
+        box-shadow: 3px 3px 0 #29251f;
     }
 
     .notes-mode .study-content {
-        width: 0;
-        flex: 0 0 0;
-        padding: 0;
-        overflow: hidden;
+        padding-left: 12px;
+        padding-right: 12px;
     }
-}
 
-.notes-mode .study-header h1 {
-    margin-left: 40px;
-}
+    .notes-mode .study-header h1 {
+        font-size: 24px;
+    }
 
-.study-sidebar h2 {
-    padding-left: 60px;
-}
-
-.study-navigation {
-    position: fixed;
-    top: 18px;
-    left: 85px;
-    z-index: 1000;
-    display: flex;
-    gap: 10px;
-}
-
-.nav-home-btn,
-.nav-back-btn {
-    padding: 10px 15px;
-    border: 2px solid #29251f;
-    border-radius: 10px;
-    background: #fff8d9;
-    color: #29251f;
-    font-family: "Segoe Print", "Comic Sans MS", cursive;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 3px 3px 0 #29251f;
-    transition: all 0.2s ease;
-}
-
-.nav-home-btn:hover,
-.nav-back-btn:hover {
-    transform: translate(-1px, -1px);
-    box-shadow: 4px 4px 0 #29251f;
-}
-
-.nav-home-btn:active,
-.nav-back-btn:active {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #29251f;
+    .notes-panel {
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 65vh;
+        min-height: 450px;
+    }
 }
