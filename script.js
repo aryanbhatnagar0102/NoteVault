@@ -343,11 +343,9 @@ function openVideo(chapterNumber) {
                 <div class="sidebar-chapters">
 
                     ${physicsChapters.map(item => `
-
                         <details
-                           class="sidebar-chapter
-                           ${item.number === chapterNumber ? "active" : ""}"
-                           onclick="closeOtherDropdowns(this)"
+                            class="sidebar-chapter ${item.number === chapterNumber ? "active" : ""}"
+                            onclick="closeOtherDropdowns(this)"
                         >
 
                             <summary>
@@ -361,13 +359,13 @@ function openVideo(chapterNumber) {
                             <div class="sidebar-options">
 
                                 <button
-                                    onclick="openNotes('${item.number}')"
+                                    onclick="event.stopPropagation(); openNotes('${item.number}')"
                                 >
                                     📄 Notes
                                 </button>
 
                                 <button
-                                    onclick="openVideo('${item.number}')"
+                                    onclick="event.stopPropagation(); openVideo('${item.number}')"
                                 >
                                     🎥 Video
                                 </button>
@@ -382,54 +380,82 @@ function openVideo(chapterNumber) {
 
             </aside>
 
-
             <button class="menu-btn" onclick="toggleSidebar()">
                 ☰
             </button>
 
+            <main class="study-content">
 
-            <div style="
-                flex: 1;
-                min-width: 0;
-                padding: 50px;
-                background: #fffdf5;
-            ">
+                <div class="study-header">
 
-                <h1 style="
-                    font-family: 'Segoe Print', 'Comic Sans MS', cursive;
-                    font-size: 42px;
-                    margin-bottom: 30px;
-                ">
-                    ${chapter.name}
-                </h1>
+                    <h1>${chapter.name}</h1>
 
+                    <button
+                        class="open-notes-btn"
+                        onclick="studyWithNotes('${chapter.number}')"
+                    >
+                        📖 Study with Notes
+                    </button>
 
-                <div style="
-                    width: 100%;
-                    height: 550px;
-                    background: black;
-                    border: 2px solid #29251f;
-                    border-radius: 10px;
-                    overflow: hidden;
-                ">
+                </div>
+
+                <div class="video-container">
 
                     <iframe
                         src="${chapter.video}"
                         title="${chapter.name} Lecture"
-                        style="
-                            width: 100%;
-                            height: 100%;
-                            border: none;
-                        "
                         allowfullscreen>
                     </iframe>
 
                 </div>
 
-            </div>
+            </main>
 
         </div>
     `;
+}
+
+function studyWithNotes(chapterNumber) {
+    const chapter = physicsChapters.find(
+        item => item.number === chapterNumber
+    );
+
+    const studyPage = document.querySelector(".study-page");
+    const sidebar = document.getElementById("studySidebar");
+    const existingNotes = document.querySelector(".notes-panel")
+
+    if(existingNotes) {
+       
+        existingNotes.remove();
+        sidebar.classList.remove("collapsed");
+        studyPage.classList.remove(".notes-mode");
+
+        return;
+    }
+
+    sidebar.classList.add("collapsed");
+    studyPage.classList.add("notes-mode");
+
+    studyPage.insertAdjacentHTML("beforeend", `
+        <aside class="notes-panel">
+
+          <div class = "notes-panel-header">
+            <h2>📄 Notes</h2>
+            <span>${chapter.name}</span>
+        </div>
+
+        <div class="nptes-panel-pdf>
+          <iframe
+            src="${chapter.pdf}"
+            title="${chapter.name} Notes"
+            width="100%"
+            height="100%"
+            >
+         </iframe>
+        </div>
+
+        </aside>
+        `);
 }
 
 function toggleSidebar() {

@@ -683,4 +683,47 @@ body {
 
 }
 
+.notes-panel {
+    width: 40%;
+    flex: 0 0 40%;
+    height: 100vh;
+    padding: 25px 18px;
+    background: #f5f0e6;
+    border-left: 2px solid #29251f;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
+.notes-panel-header {
+    flex-shrink: 0;
+    margin-bottom: 15px;
+}
+
+.notes-panel-header h2 {
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.notes-panel-header span {
+    font-size: 13px;
+    color: #777064;
+}
+
+.notes-pdf {
+    display: block;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    border: 2px solid #29251f;
+    border-radius: 8px;
+    background: white;
+}
+
+.notes-mode .study-content {
+    width: 60%;
+    flex: 0 0 60%;
+    min-width: 0;
+}
