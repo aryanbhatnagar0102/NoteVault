@@ -64,6 +64,12 @@ mathematicsCard.addEventListener("click", () => {
     showMathematics();
 });
 
+const biologyCard = document.querySelector(".biology");
+
+biologyCard.addEventListener("click", () => {
+    showBiology();
+});
+
 const physicsChapters = [
     {
         number: "01",
@@ -324,8 +330,101 @@ const mathematicsChapters = [
     {
         number: "13",
         name: "Probability",
-        pdf: "resources/maths/Probability_Notes",
+        pdf: "resources/maths/Probability_Notes.pdf",
         video: "https://www.youtube.com/embed/_YJr2t_1NTU?si=4d0nWBaRNzEWoxbs" 
+    },
+];
+
+const biologyChapters = [
+    {
+        number: "01",
+        name: "Sexual Reproduction in Flowering",
+        pdf: "resources/biology/Sexual_Reproduction_in_Flowering.pdf",
+        video: "https://www.youtube.com/embed/N84u3PcLffc?si=dRcMV5XmpXxdkq3I"
+    },
+
+    {
+        number: "02",
+        name: "Human Reproduction",
+        pdf: "resources/biology/Human_Reproduction_Notes.pdf",
+        video: "https://www.youtube.com/embed/FWaOU7X6B0E?si=apu6YxmVvbFtenE3" 
+    },
+
+    {
+        number: "03",
+        name: "Reproductive Health",
+        pdf: "resources/biology/Reproductive_Health_Notes.pdf",
+        video: "https://www.youtube.com/embed/ZbaGJT4EScs?si=CWWVLfFag_b1aImQ"
+    },
+
+    {
+        number: "04",
+        name: "Principles of Inheritance and Variation",
+        pdf: "resources/biology/Principles_of_Inheritance_and_Variation_Notes.pdf",
+        video: "https://www.youtube.com/embed/CvTstNChMww?si=A2pX231-MmMsyNS8"
+    },
+
+    {
+        number: "05",
+        name: "Molecular Basis od Inheritance",
+        pdf: "resources/biology/Molecular_Basis_of_Inheritance_Notes.pdf",
+        video: "https://www.youtube.com/embed/5qCpewUFNk0?si=GxYrzBRQtNiQzMEJ" 
+    },
+
+    {
+        number: "06",
+        name: "Evolution",
+        pdf: "resources/biology/Evolution_Notes.pdf",
+        video: "https://www.youtube.com/embed/DaNhRwRui3Q?si=5meRMmS0m8XcObht" 
+    },
+
+    {
+        number: "07",
+        name: "Human Health and Disease",
+        pdf: "resources/biology/Human_Health_and_Disease_Notes.pdf",
+        video: "https://www.youtube.com/embed/WJPaKue8Fws?si=wn1GqsLVE5dVdVxl"
+    },
+
+    {
+        number: "08",
+        name: "Microbes",
+        pdf: "resources/biology/Microbes_Notes.pdf",
+        video: "https://www.youtube.com/embed/4uErIyc5XGs?si=Ldd2-AEe-r3W8yiJ"
+    },
+
+    {
+        number: "09",
+        name: "Biotechnology Principles and Processes",
+        pdf: "resources/biology/Biotechnology_Principles_and_Processes_Notes.pdf",
+        video: "https://www.youtube.com/embed/o334PgHRINA?si=giIzwnGI34-JHHv8" 
+    },
+
+    {
+        number: "10",
+        name: "Biotechnology and Its Applications",
+        pdf: "resources/biology/Biotechnoogy_and_its_Applications_Notes.pdf",
+        video: "https://www.youtube.com/embed/_HpS_SyziO4?si=F4XTDR8TLq2YMMze"
+    },
+
+    {
+        number: "11",
+        name: "Organism and Population",
+        pdf: "resources/biology/Organism_and_Population_Notes.pdf",
+        video: "https://www.youtube.com/embed/mezR5ap9aPg?si=7PeI4G8L-_NCtz-E"
+    },
+
+    {
+        number: "12",
+        name: "Ecosystem",
+        pdf: "resources/biology/Ecosystem_Notes.pdf",
+        video: "https://www.youtube.com/embed/HXJFVRiT3Hc?si=4Lvux_6wuZqgyISt"
+    },
+
+    {
+        number: "13",
+        name: "Biodiversity and Conservation",
+        pdf: "resources/biology/Biodiversity_and_Conservation_Notes.pdf",
+        video: "https://www.youtube.com/embed/uvzFdsyZ_xo?si=xsxzVEWoZpsJlTK5" 
     },
 ];
 
@@ -333,12 +432,14 @@ const subjectData = {
     physics: physicsChapters,
     chemistry: chemistryChapters,
     mathematics: mathematicsChapters,
+    biology: biologyChapters,
 };
 
 const subjectNames = {
     physics: "Physics",
     chemistry: "Chemistry",
     mathematics: "Mathematics",
+    biology: "Biology",
 };
 
 function showPhysics() {
@@ -440,8 +541,53 @@ function showMathematics() {
     `;
 }
 
+function showBiology() {
+
+    document.getElementById("app").innerHTML = `
+        <div class="subject-page">
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+            <header class="subject-header">
+                <p>CLASS 12 • BIOLOGY</p>
+                <h1>Biology</h1>
+                <span>Choose a chapter to start studying</span>
+            </header>
+
+            <div class="chapter-list">
+
+                ${biologyChapters.map(chapter => `
+                    <div class="chapter"
+                         onclick="toggleChapter(this, '${chapter.number}', 'biology')">
+
+                        <span>${chapter.number}</span>
+                        <h3>${chapter.name}</h3>
+
+                    </div>
+                `).join("")}
+
+            </div>
+
+        </div>
+    `;
+}
+
 function goHome() {
     location.reload();
+}
+
+function goBackToSubject(subject) {
+    if (subject === "physics") {
+        showPhysics();
+    } else if (subject === "chemistry") {
+        showChemistry();
+    } else if (subject === "mathematics") {
+        showMathematics();
+    } else if (subject === "biology") {
+        showBiology();
+    }
 }
 
 function toggleChapter(chapterElement, chapterNumber, subject) {
@@ -501,6 +647,16 @@ function openNotes(subject, chapterNumber) {
     document.getElementById("app").innerHTML = `
 
         <div class="study-page">
+
+
+         <div class="study-navigation">
+             <button class="nav-home-btn" onclick="goHome()">🏠 Home</button>
+             <button class="nav-back-btn" onclick="goBackToSubject('${subject}')">← Back</button>
+         </div>
+
+            <button class="home-btn" onclick="goHome()">
+               Home
+            </button>
 
             <aside class="study-sidebar" id="studySidebar">
 
@@ -593,6 +749,15 @@ function openVideo(subject, chapterNumber) {
     document.getElementById("app").innerHTML = `
 
         <div class="study-page">
+
+          <div class="study-navigation">
+              <button class="nav-home-btn" onclick="goHome()">🏠 Home</button>
+              <button class="nav-back-btn" onclick="goBackToSubject('${subject}')">← Back</button>
+          </div>
+
+              <button class="home-btn" onclick="goHome()">
+                Home
+              </button>
 
             <aside class="study-sidebar" id="studySidebar">
 

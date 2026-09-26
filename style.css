@@ -656,3 +656,39 @@ body {
 .study-sidebar h2 {
     padding-left: 60px;
 }
+
+.study-navigation {
+    position: fixed;
+    top: 18px;
+    left: 85px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-home-btn,
+.nav-back-btn {
+    padding: 10px 15px;
+    border: 2px solid #29251f;
+    border-radius: 10px;
+    background: #fff8d9;
+    color: #29251f;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #29251f;
+    transition: all 0.2s ease;
+}
+
+.nav-home-btn:hover,
+.nav-back-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #29251f;
+}
+
+.nav-home-btn:active,
+.nav-back-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #29251f;
+}
