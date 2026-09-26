@@ -51,7 +51,18 @@ const physicsCard = document.querySelector(".physics");
 
 physicsCard.addEventListener("click", () => {
     showPhysics();
-})
+});
+
+const chemistryCard = document.querySelector(".chemistry");
+
+chemistryCard.addEventListener("click", () => {
+    showChemistry();
+});
+const mathematicsCard = document.querySelector(".mathematics");
+
+mathematicsCard.addEventListener("click", () => {
+    showMathematics();
+});
 
 const physicsChapters = [
     {
@@ -153,6 +164,183 @@ const physicsChapters = [
     }
 ];
 
+const chemistryChapters = [
+    {
+        number: "01",
+        name: "Solutions",
+        pdf: "resources/chemistry/Solutions_Notes.pdf",
+        video: "https://www.youtube.com/embed/U_dJxj895Jw?si=05MNS81wK87abjfJ"
+    },
+
+    {
+        number: "02",
+        name: "Electrochemistry",
+        pdf: "resources/chemistry/Electrochemistry_Notes.pdf",
+        video: "https://www.youtube.com/embed/_CVRAZ1b4qg?si=WQKb8QO5vPSTHQQ_"
+    },
+
+    {
+        number: "03",
+        name: "Chemical Kinetics",
+        pdf: "resources/chemistry/Chemical_Kinetics_Notes.pdf",
+        video: "https://www.youtube.com/embed/Xz8wjFX6S_0?si=IVUaOyVRaUQjkyjM" 
+    },
+
+    {
+        number: "04",
+        name: "The d and f Block Elements",
+        pdf: "resources/chemistry/The_d_and_f_Block_Elements_Notes.pdf",
+        video:"https://www.youtube.com/embed/Fz3YCSbrHqc?si=nlLYrV4Xd6P2JKH9"
+    },
+
+    {
+        number: "05",
+        name: "Coordination Compounds",
+        pdf: "resources/chemistry/Coordination_Compunds_Notes.pdf",
+        video: "https://www.youtube.com/embed/t38_SGflTak?si=nJpSTNh0vCTPQsC9"
+    },
+
+    {
+        number: "06",
+        name: "Haloalkanes and Haloarenes",
+        pdf: "resources/chemistry/Haloalkanes_and_Haloarenes_Notes.pdf",
+        video: "https://www.youtube.com/embed/cB9sbMu6R04?si=Kf7F-t591LTQpeUE"
+    },
+
+    {
+        number: "07",
+        name: "Alcohols,Phenols and Ethers",
+        pdf: "resources/chemistry/Alcohols_Phenols_and_Ethers_Notes.pdf",
+        video: "https://www.youtube.com/embed/JBGnunZzCUM?si=ghIKbyI-n-Myk1JY"
+    },
+
+    {
+        number: "08",
+        name: "Aldehyde,Ketones and Acids",
+        pdf: "resources/chemistry/Aldehydes_Ketones_and_Acids_Notes.pdf",
+        video: "https://www.youtube.com/embed/LUhUM_Vw4Oo?si=Z5MEQspL9n_6RXUc"
+    },
+
+    {
+        number: "09",
+        name: "Amines",
+        pdf: "resources/chemistry/Amines_Notes.pdf",
+        video: "https://www.youtube.com/embed/OBqFtHYhSYM?si=BJsWCLWwjLlYPu9S"
+    },
+
+    {
+        number: "10",
+        name: "Biomolecules",
+        pdf: "resources/chemistry/Biomolecules_Notes.pdf",
+        video:"https://www.youtube.com/embed/ZzSHpxjH6Kg?si=BDXPqFYXpzp4hqo6"
+    }
+];
+
+const mathematicsChapters = [
+    {
+        number: "01",
+        name: "Relation and Functions",
+        pdf: "resources/maths/Relation_and_functions_Notes.pdf",
+        video: "https://www.youtube.com/embed/a8YasMSWFvc?si=BL0Yb49GKTodleu9"
+    },
+
+    {
+        number: "02",
+        name: "Inverse Trigonometric Functions",
+        pdf: "resources/maths/Inverse_Trigonometric_Functions_Notes.pdf",
+        video: "https://www.youtube.com/embed/4Aml6yd4tDY?si=ilSgh9vXUqb5epSb"
+    },
+
+    {
+        number: "03",
+        name: "Matrices",
+        pdf: "resources/maths/Matrices_Notes.pdf",
+        video: "https://www.youtube.com/embed/2zHpum8F5RA?si=Jey2v6fv_UUN3ntR"
+    },
+
+    {
+        number: "04",
+        name: "Determinants",
+        pdf: "resources/maths/Determinants_Notes.pdf",
+        video: "https://www.youtube.com/embed/pafeee3O6u8?si=fAJRn7ZwLrOMpwxz" 
+    },
+
+    {
+        number: "05",
+        name: "Continuity and Differentiability",
+        pdf: "resources/maths/Continuity_and_Differentiability_Notes.pdf",
+        video: "https://www.youtube.com/embed/cIxHoVCUN1M?si=2-iLyvZSu7rsKSqo" 
+    },
+
+    {
+        number: "06",
+        name: "Application of Derivatives",
+        pdf: "resources/maths/Application_of_Derivatives_Notes.pdf",
+        video: "https://www.youtube.com/embed/uVEOu40lYEY?si=xcF2umylc0mj0Cqa"
+    },
+
+    {
+        number: "07",
+        name: "Integrals",
+        pdf: "resources/maths/Integrals_Notes.pdf",
+        video: "https://www.youtube.com/embed/dBglfhVX6kI?si=8tSyOzCuukAUAKbP"
+    },
+
+    {
+        number: "08",
+        name: "Application of Integrals",
+        pdf: "resources/maths/Application_of_Integrals_Notes.pdf",
+        video: "https://www.youtube.com/embed/-tcuZsZqXZk?si=ZrJSFyqh79c6O47G"
+    },
+
+    {
+        number: "09",
+        name: "Differential Equations",
+        pdf: "resources/maths/Differential_Equations_Notes.pdf",
+        video: "https://www.youtube.com/embed/EEudvNSWzXE?si=w5iKoSsVKjhOTu00"
+    },
+
+    {
+        number: "10",
+        name: "Vector Algebra",
+        pdf: "resources/maths/Vector_Algebra_Notes.pdf",
+        video: "https://www.youtube.com/embed/B5Rq-af5R14?si=Og7BmMHY0NqbXKNO" 
+    },
+
+    {
+        number: "11",
+        name: "Three Dimensional Geometry",
+        pdf: "resources/maths/3D_Geometry_Notes.pdf",
+        video: "https://www.youtube.com/embed/7ggiHx1dEok?si=GDrbvOhYhjTzFAwd"
+    },
+
+    {
+        number: "12",
+        name: "Linear Programming",
+        pdf: "resources/maths/Linear_Programming_Notes.pdf",
+        video: "https://www.youtube.com/embed/98ngGuFd9Vg?si=Xnh63qWgTPiz__Q0" 
+    },
+
+    {
+        number: "13",
+        name: "Probability",
+        pdf: "resources/maths/Probability_Notes",
+        video: "https://www.youtube.com/embed/_YJr2t_1NTU?si=4d0nWBaRNzEWoxbs" 
+    },
+];
+
+const subjectData = {
+    physics: physicsChapters,
+    chemistry: chemistryChapters,
+    mathematics: mathematicsChapters,
+};
+
+const subjectNames = {
+    physics: "Physics",
+    chemistry: "Chemistry",
+    mathematics: "Mathematics",
+};
+
 function showPhysics() {
 
     document.getElementById("app").innerHTML = `
@@ -172,7 +360,73 @@ function showPhysics() {
 
                 ${physicsChapters.map(chapter => `
                     <div class="chapter"
-                         onclick="toggleChapter(this, '${chapter.number}')">
+                         onclick="toggleChapter(this, '${chapter.number}', 'physics')">
+
+                        <span>${chapter.number}</span>
+                        <h3>${chapter.name}</h3>
+
+                    </div>
+                `).join("")}
+
+            </div>
+
+        </div>
+    `;
+}
+
+function showChemistry() {
+
+    document.getElementById("app").innerHTML = `
+        <div class="subject-page">
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+            <header class="subject-header">
+                <p>CLASS 12 • CHEMISTRY</p>
+                <h1>Chemistry</h1>
+                <span>Choose a chapter to start studying</span>
+            </header>
+
+            <div class="chapter-list">
+
+                ${chemistryChapters.map(chapter => `
+                    <div class="chapter"
+                         onclick="toggleChapter(this, '${chapter.number}', 'chemistry')">
+
+                        <span>${chapter.number}</span>
+                        <h3>${chapter.name}</h3>
+
+                    </div>
+                `).join("")}
+
+            </div>
+
+        </div>
+    `;
+}
+
+function showMathematics() {
+
+    document.getElementById("app").innerHTML = `
+        <div class="subject-page">
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+            <header class="subject-header">
+                <p>CLASS 12 • MATHEMATICS</p>
+                <h1>Mathematics</h1>
+                <span>Choose a chapter to start studying</span>
+            </header>
+
+            <div class="chapter-list">
+
+                ${mathematicsChapters.map(chapter => `
+                    <div class="chapter"
+                         onclick="toggleChapter(this, '${chapter.number}', 'mathematics')">
 
                         <span>${chapter.number}</span>
                         <h3>${chapter.name}</h3>
@@ -190,11 +444,12 @@ function goHome() {
     location.reload();
 }
 
-function toggleChapter(chapterElement, chapterNumber) {
+function toggleChapter(chapterElement, chapterNumber, subject) {
 
     document.querySelectorAll(".chapter").forEach(item => {
 
         if (item !== chapterElement) {
+
             item.classList.remove("open");
 
             const options = item.querySelector(".chapter-options");
@@ -203,7 +458,6 @@ function toggleChapter(chapterElement, chapterNumber) {
                 options.remove();
             }
         }
-
     });
 
     if (chapterElement.classList.contains("open")) {
@@ -224,11 +478,11 @@ function toggleChapter(chapterElement, chapterNumber) {
     chapterElement.insertAdjacentHTML("beforeend", `
         <div class="chapter-options">
 
-            <button onclick="openNotes('${chapterNumber}')">
+            <button onclick="openNotes('${subject}', '${chapterNumber}')">
                 📄 Handwritten Notes
             </button>
 
-            <button onclick="openVideo('${chapterNumber}')">
+            <button onclick="openVideo('${subject}', '${chapterNumber}')">
                 🎥 Video Lecture
             </button>
 
@@ -236,9 +490,11 @@ function toggleChapter(chapterElement, chapterNumber) {
     `);
 }
 
-function openNotes(chapterNumber) {
+function openNotes(subject, chapterNumber) {
 
-    const chapter = physicsChapters.find(
+    const chapters = subjectData[subject];
+
+    const chapter = chapters.find(
         item => item.number === chapterNumber
     );
 
@@ -248,11 +504,11 @@ function openNotes(chapterNumber) {
 
             <aside class="study-sidebar" id="studySidebar">
 
-                <h2>⚡ Physics</h2>
+                <h2>${subjectNames[subject]}</h2>
 
                 <div class="sidebar-chapters">
 
-                    ${physicsChapters.map(item => `
+                    ${chapters.map(item => `
 
                         <details
                             class="sidebar-chapter ${item.number === chapterNumber ? "active" : ""}"
@@ -270,13 +526,13 @@ function openNotes(chapterNumber) {
                             <div class="sidebar-options">
 
                                 <button
-                                    onclick="event.stopPropagation(); openNotes('${item.number}')"
+                                    onclick="event.stopPropagation(); openNotes('${subject}', '${item.number}')"
                                 >
                                     📄 Notes
                                 </button>
 
                                 <button
-                                    onclick="event.stopPropagation(); openVideo('${item.number}')"
+                                    onclick="event.stopPropagation(); openVideo('${subject}', '${item.number}')"
                                 >
                                     🎥 Video
                                 </button>
@@ -326,9 +582,11 @@ function openNotes(chapterNumber) {
     `;
 }
 
-function openVideo(chapterNumber) {
+function openVideo(subject, chapterNumber) {
 
-    const chapter = physicsChapters.find(
+    const chapters = subjectData[subject];
+
+    const chapter = chapters.find(
         item => item.number === chapterNumber
     );
 
@@ -338,11 +596,12 @@ function openVideo(chapterNumber) {
 
             <aside class="study-sidebar" id="studySidebar">
 
-                <h2>⚡ Physics</h2>
+                <h2>${subjectNames[subject]}</h2>
 
                 <div class="sidebar-chapters">
 
-                    ${physicsChapters.map(item => `
+                    ${chapters.map(item => `
+
                         <details
                             class="sidebar-chapter ${item.number === chapterNumber ? "active" : ""}"
                             onclick="closeOtherDropdowns(this)"
@@ -359,13 +618,13 @@ function openVideo(chapterNumber) {
                             <div class="sidebar-options">
 
                                 <button
-                                    onclick="event.stopPropagation(); openNotes('${item.number}')"
+                                    onclick="event.stopPropagation(); openNotes('${subject}', '${item.number}')"
                                 >
                                     📄 Notes
                                 </button>
 
                                 <button
-                                    onclick="event.stopPropagation(); openVideo('${item.number}')"
+                                    onclick="event.stopPropagation(); openVideo('${subject}', '${item.number}')"
                                 >
                                     🎥 Video
                                 </button>
@@ -392,7 +651,7 @@ function openVideo(chapterNumber) {
 
                     <button
                         class="open-notes-btn"
-                        onclick="studyWithNotes('${chapter.number}')"
+                        onclick="studyWithNotes('${subject}', '${chapter.number}')"
                     >
                         📖 Study with Notes
                     </button>
@@ -415,20 +674,23 @@ function openVideo(chapterNumber) {
     `;
 }
 
-function studyWithNotes(chapterNumber) {
-    const chapter = physicsChapters.find(
+function studyWithNotes(subject, chapterNumber) {
+
+    const chapters = subjectData[subject];
+
+    const chapter = chapters.find(
         item => item.number === chapterNumber
     );
 
     const studyPage = document.querySelector(".study-page");
     const sidebar = document.getElementById("studySidebar");
-    const existingNotes = document.querySelector(".notes-panel")
+    const existingNotes = document.querySelector(".notes-panel");
 
-    if(existingNotes) {
-       
+    if (existingNotes) {
+
         existingNotes.remove();
         sidebar.classList.remove("collapsed");
-        studyPage.classList.remove(".notes-mode");
+        studyPage.classList.remove("notes-mode");
 
         return;
     }
@@ -439,26 +701,28 @@ function studyWithNotes(chapterNumber) {
     studyPage.insertAdjacentHTML("beforeend", `
         <aside class="notes-panel">
 
-          <div class = "notes-panel-header">
-            <h2>📄 Notes</h2>
-            <span>${chapter.name}</span>
-        </div>
+            <div class="notes-panel-header">
+                <h2>📄 Notes</h2>
+                <span>${chapter.name}</span>
+            </div>
 
-        <div class="nptes-panel-pdf>
-          <iframe
-            src="${chapter.pdf}"
-            title="${chapter.name} Notes"
-            width="100%"
-            height="100%"
-            >
-         </iframe>
-        </div>
+            <div class="notes-panel-pdf">
+
+                <iframe
+                    src="${chapter.pdf}#navpanes=0"
+                    title="${chapter.name} Notes"
+                    width="100%"
+                    height="100%">
+                </iframe>
+
+            </div>
 
         </aside>
-        `);
+    `);
 }
 
 function toggleSidebar() {
+
     const sidebar = document.getElementById("studySidebar");
 
     sidebar.classList.toggle("collapsed");
@@ -478,9 +742,12 @@ function toggleSidebarChapter(chapter) {
 }
 
 function closeOtherDropdowns(current) {
+
     document.querySelectorAll(".sidebar-chapter").forEach(item => {
+
         if (item !== current) {
             item.removeAttribute("open");
         }
+
     });
 }
