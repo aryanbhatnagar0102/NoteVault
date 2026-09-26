@@ -2150,3 +2150,116 @@ body.dark-mode .study-theme-btn:hover {
     background: #414141;
     color: #eeeeee;
 }
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .home-page {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .site-header {
+        width: 100%;
+    }
+
+    .home-content {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .subjects {
+        width: 100%;
+    }
+
+    .subject-page {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .subject-topbar {
+        width: 100%;
+    }
+
+    .subject-main {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .chapter-list {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .chapter {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .study-page {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: auto;
+    }
+
+    .study-sidebar {
+        flex-shrink: 0;
+    }
+
+    .notes-mode {
+        width: 760px !important;
+        min-width: 760px !important;
+        max-width: none !important;
+    }
+
+    .notes-mode .study-content {
+        width: 60% !important;
+        flex: 0 0 60% !important;
+    }
+
+    .notes-panel {
+        width: 40% !important;
+        flex: 0 0 40% !important;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .home-page {
+        padding: 0 10px;
+    }
+
+    .home-content {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .site-header {
+        padding-left: 12px;
+        padding-right: 8px;
+    }
+
+    .subjects {
+        width: 100%;
+    }
+
+    .subject-main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .chapter {
+        width: 100%;
+    }
+
+    .study-page {
+        max-width: 100vw;
+    }
+}
