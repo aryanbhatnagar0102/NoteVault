@@ -1,51 +1,122 @@
+
 document.getElementById("app").innerHTML = `
-    <div class="home-page">
+  <div class ="home-page">
 
-        <header class="hero">
-            <p class="small-title">CLASS 12 • PCMB</p>
+    <header class="site-header">
+       <div class="logo">
+         Note<span>Vault</span>
+        </div>
 
-            <h1>NoteVault</h1>
+       <nav class="top-nav">
+          <button class="nav-active">Home</button>
+          <button>About</button>
+          <button class="theme-btn">☼</button>
+        </nav>
+    </header>
 
-            <p class="tagline">
-                Your handwritten notes & video lectures,
-                all in one place.
-            </p>
-        </header>
+    <main class="home-content">
+
+      <div class="side-note left-note">
+        <span>Study</span>
+        <span>Learn</span>
+        <span>Revise</span>
+        <span>Grow</span>
+        <div>↘</div>
+      </div>
+
+      <div class="hero">
+         <div class="hero-title">
+            <div class="hero-doodle">♧</div>
+
+            <h1>
+              Note<span>Vault</span>
+            </h1>
+
+            <div class="crown">♕</div>
+        </div>
+
+        <h2>Class 12 PCMB</h2>
+
+        <p>
+          Handwritten Notes and Video Lectures,
+          all in one place.
+        </p>
+      </div>
+
+      <div class="side-note right-note">
+
+                <p>✓ Notes</p>
+                <p>✓ Video Lectures</p>
+                <p>✓ All Chapters</p>
+                <p>✓ One Place</p>
+
+            </div>
 
         <section class="subjects">
 
-            <div class="subject-card physics">
-                <div class="subject-icon">⚡</div>
-                <h2>Physics</h2>
-                <p>Notes & Lectures</p>
+                <div class="subject-card physics">
+
+                    <div class="subject-icon">⚛</div>
+
+                    <h2>Physics</h2>
+
+                    <div class="card-arrow">→</div>
+
+                </div>
+
+
+                <div class="subject-card chemistry">
+
+                    <div class="subject-icon">⚗</div>
+
+                    <h2>Chemistry</h2>
+
+                    <div class="card-arrow">→</div>
+
+                </div>
+
+
+                <div class="subject-card mathematics">
+
+                    <div class="subject-icon">△</div>
+
+                    <h2>Mathematics</h2>
+
+                    <div class="card-arrow">→</div>
+
+                </div>
+
+
+                <div class="subject-card biology">
+
+                    <div class="subject-icon">♧</div>
+
+                    <h2>Biology</h2>
+
+                    <div class="card-arrow">→</div>
+
+                </div>
+
+            </section>
+
+            <div class="home-bottom">
+
+                <span>"Same Syllabus.</span>
+                <u>Less Scrolling.</u>
+                <span>More Learning."</span>
+                <span class="smile">☺</span>
+
             </div>
 
-            <div class="subject-card chemistry">
-                <div class="subject-icon">🧪</div>
-                <h2>Chemistry</h2>
-                <p>Notes & Lectures</p>
-            </div>
+            <div class="home-star star-one">✦</div>
+            <div class="home-star star-two">✧</div>
+            <div class="home-star star-three">✦</div>
 
-            <div class="subject-card mathematics">
-                <div class="subject-icon">📐</div>
-                <h2>Mathematics</h2>
-                <p>Notes & Lectures</p>
-            </div>
-
-            <div class="subject-card biology">
-                <div class="subject-icon">🧬</div>
-                <h2>Biology</h2>
-                <p>Notes & Lectures</p>
-            </div>
-
-        </section>
-
-        <p class="footer-text">
-            Pick a subject and start studying ✦
-        </p>
+        </main>
 
     </div>
-`;
+
+`
 
 const physicsCard = document.querySelector(".physics");
 const chemistryCard = document.querySelector(".chemistry");
