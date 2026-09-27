@@ -511,10 +511,6 @@ function renderSubjectPage(subject, chapters) {
                     >
                         ☼
                     </button>
-
-                    <button>
-                        ☰
-                    </button>
                 </div>
             </header>
 
