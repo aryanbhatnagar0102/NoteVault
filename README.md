@@ -67,11 +67,10 @@ Notes Sources
 
 The handwritten notes used in the project were taken from Collegedunia:
 
-- Notes author: Kabir Singh
-- Physics: https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-physics
-- Chemistry: https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-chemistry
-- Mathematics: https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-maths
-- Biology: https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-biology
+- Physics: [https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-physics](https://notesdrive.com/product/class-12-physics-all-chapters-handwritte-notes-pdf-download-cbse-ncert/)
+- Chemistry: [https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-chemistry](https://notesdrive.com/product/class-12-chemistry-all-chapters-handwritte-notes-pdf-download-cbse-ncert/)
+- Mathematics: [https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-maths](https://t.me/notesmuseum)
+- Biology: [https://collegedunia.com/articles/e-1731-ncert-handwritten-notes-class-12-biology](https://notesdrive.com/product/class-12-biology-all-chapters-handwritte-notes-pdf-download-cbse-ncert/)
 
 ## AI usage
 
