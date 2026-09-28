@@ -376,7 +376,7 @@ const biologyChapters = [
     },
     {
         number: "05",
-        name: "Molecular Basis od Inheritance",
+        name: "Molecular Basis of Inheritance",
         pdf: "resources/biology/Molecular_Basis_of_Inheritance_Notes.pdf",
         video: "https://www.youtube.com/embed/5qCpewUFNk0?si=GxYrzBRQtNiQzMEJ"
     },
